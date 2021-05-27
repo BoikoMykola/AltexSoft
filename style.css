@@ -1,0 +1,942 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+header {
+  font-family: "Acme", sans-serif;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(45deg, #12C1E6, #01F973);
+}
+header .headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 24px 20px;
+  z-index: 5;
+}
+header .headerContainer .logo {
+  z-index: 5;
+}
+header .headerContainer .logo a img {
+  width: 92px;
+  height: 20px;
+}
+header .headerContainer .headerMenu .menuIcon {
+  z-index: 5;
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+header .headerContainer .headerMenu .menuIcon span, header .headerContainer .headerMenu .menuIcon::before, header .headerContainer .headerMenu .menuIcon::after {
+  left: 0;
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  transition: all 0.3s ease 0s;
+  background-color: #fff;
+}
+header .headerContainer .headerMenu .menuIcon::before, header .headerContainer .headerMenu .menuIcon::after {
+  content: "";
+}
+header .headerContainer .headerMenu .menuIcon::before {
+  top: 0;
+}
+header .headerContainer .headerMenu .menuIcon::after {
+  bottom: 0;
+}
+header .headerContainer .headerMenu .menuIcon span {
+  top: 50%;
+  transform: scale(1) translate(0px, -50%);
+}
+header .headerContainer .headerMenu .menuIcon.active span {
+  transform: scale(0) translate(0px, -50%);
+}
+header .headerContainer .headerMenu .menuIcon.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0px -50%);
+  -webkit-transform: rotate(-45deg);
+}
+header .headerContainer .headerMenu .menuIcon.active::after {
+  top: 50%;
+  transform: rotate(45deg) translate(0px 50%);
+  -webkit-transform: rotate(45deg);
+}
+header .headerContainer .headerMenu nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 92px;
+  transition: left 0.3s ease 0s;
+  overflow: auto;
+  z-index: 2;
+}
+header .headerContainer .headerMenu nav ul li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .headerContainer .headerMenu nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 24px;
+  color: #22BF95;
+  letter-spacing: 2px;
+  padding: 8px;
+}
+header .headerContainer .headerMenu nav ul li a:hover {
+  font-size: 14px;
+  line-height: 24px;
+  color: #59D865;
+}
+header .headerContainer .headerMenu nav ul li hr {
+  width: 40px;
+  margin-bottom: 3px;
+  border: none;
+  height: 2px;
+  background-color: #22BF95;
+}
+header .headerContainer .headerMenu nav ul li .current {
+  padding-bottom: 3px;
+}
+header .headerContainer .headerMenu nav ul li:nth-child(7) a {
+  margin: 197px 0 16px 0;
+  border: 1px solid #22BF95;
+  border-radius: 20px;
+  width: 180px;
+  text-align: center;
+}
+header .headerContainer .headerMenu nav ul li:nth-child(7) a:hover {
+  font-size: 14px;
+  line-height: 24px;
+  color: #59D865;
+  color: #fff;
+  background-color: #22BF95;
+}
+header .headerContainer .headerMenu nav ul li:last-child a {
+  border: 1px solid #22BF95;
+  border-radius: 20px;
+  width: 90px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+header .headerContainer .headerMenu nav ul li:last-child a:hover {
+  font-size: 14px;
+  line-height: 24px;
+  color: #59D865;
+  color: #fff;
+  background-color: #22BF95;
+}
+header .headerContainer .headerMenu nav.active {
+  left: 0;
+}
+header .headerContainer .headerMenu nav.active::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 62px;
+  background: linear-gradient(45deg, #12C1E6, #01F973);
+  z-index: 2;
+  border: none;
+}
+header h1 {
+  font-family: "Actor", sans-serif;
+  font-size: 40px;
+  line-height: 56px;
+  color: #fff;
+  width: 38%;
+  margin: 6px auto 30px auto;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+}
+header .subNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  height: 40px;
+  background: #FFFFFF;
+  box-shadow: 0 12px 24px #F2F2F2;
+  border-radius: 5px;
+  margin: 0 auto;
+  border-top: 2.5px solid #22BF95;
+  position: relative;
+  bottom: -28px;
+}
+header .subNav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 20px;
+  color: #7F7F7F;
+  letter-spacing: 2px;
+}
+header .subNav a:nth-child(2)::before, header .subNav a:nth-child(2)::after {
+  content: "|";
+  font-size: 20px;
+  font-weight: 400;
+  color: #E5E5E5;
+}
+header .subNav a:nth-child(2)::before {
+  padding: 0 27px 0 33.55px;
+}
+header .subNav a:nth-child(2)::after {
+  padding: 0 27px 0 25px;
+}
+header .subNav a:hover {
+  color: #01F973;
+}
+header .subNav .current {
+  color: #22BF95;
+}
+
+.tips {
+  padding: 52px 20px 0;
+  font-family: "Aclonica", sans-serif;
+}
+.tips .title {
+  margin-bottom: 18px;
+}
+.tips .title hr {
+  margin-bottom: 10px;
+  border: none;
+  height: 1.5px;
+  background-color: #B2B2B2;
+}
+.tips .title img {
+  width: 90px;
+  height: 18.6px;
+}
+.tips .accordion hr {
+  margin-top: 5px;
+  border: none;
+  height: 1.5px;
+  background-color: #22BF95;
+}
+.tips .accordion .accordionPanel.activePanel .accordionHeader {
+  padding-top: 24px;
+}
+.tips .accordion .accordionPanel.activePanel .accordionHeader :first-child {
+  display: none;
+}
+.tips .accordion .accordionPanel.activePanel .accordionHeader :last-child::after {
+  transform: rotate(0deg);
+}
+.tips .accordion .accordionPanel.activePanel .accordionBody {
+  display: block;
+}
+.tips .accordion .accordionPanel.activePanel .accordionBody > img {
+  display: block;
+  width: 117px;
+  margin: 22px auto;
+}
+.tips .accordion .accordionPanel.activePanel .accordionBody div p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #191919;
+  font-weight: 400;
+}
+.tips .accordion .accordionPanel.activePanel .accordionBody div p:first-child {
+  margin-bottom: 20px;
+}
+.tips .accordion .accordionPanel.activePanel .accordionBody div div {
+  margin: 11px 0 24px 0;
+  display: flex;
+  align-items: center;
+}
+.tips .accordion .accordionPanel.activePanel .accordionBody div div img {
+  padding-right: 20.5px;
+}
+.tips .accordion .accordionPanel.activePanel .accordionBody div div p {
+  font-size: 12px;
+  line-height: 24px;
+  color: #7f7f7f;
+}
+.tips .accordion .accordionPanel .accordionHeader {
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  padding-right: 10px;
+}
+.tips .accordion .accordionPanel .accordionHeader h3 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #191919;
+  font-weight: 400;
+  position: relative;
+  bottom: 3px;
+  flex-grow: 2;
+}
+.tips .accordion .accordionPanel .accordionHeader span:first-child {
+  font-family: "Actor", sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  color: #E5E5E5;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 0 18px 0 12px;
+}
+.tips .accordion .accordionPanel .accordionHeader span:last-child {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid #22BF95;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(127, 127, 127, 0.3);
+}
+.tips .accordion .accordionPanel .accordionHeader span:last-child::before, .tips .accordion .accordionPanel .accordionHeader span:last-child::after {
+  content: "";
+  width: 7px;
+  height: 1.5px;
+  background-color: #22BF95;
+  position: absolute;
+  left: 2px;
+  top: 4.75px;
+  transition: transform 0.3s ease 0s;
+}
+.tips .accordion .accordionPanel .accordionHeader span:last-child::after {
+  transform: rotate(-90deg);
+}
+.tips .accordion .accordionPanel .accordionBody {
+  display: none;
+}
+
+.glossary {
+  padding: 24px 0;
+  font-family: "Aclonica", sans-serif;
+}
+.glossary .title {
+  padding: 0 20px;
+  margin-bottom: 24px;
+}
+.glossary .title hr {
+  margin-bottom: 10px;
+  border: none;
+  height: 1.5px;
+  background-color: #B2B2B2;
+}
+.glossary .title img {
+  width: 114px;
+  height: 18px;
+}
+.glossary .slider {
+  background: linear-gradient(45deg, #E1E1E1, #FFFFFF);
+  padding: 24px 20px;
+}
+.glossary .slider .list {
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 12px 24px #E5E5E5;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 32px;
+  color: #7F7F7F;
+}
+.glossary .slider .list ul {
+  padding: 39px 0 41px 62px;
+}
+.glossary .slider .list ul li {
+  list-style-type: none;
+  cursor: pointer;
+}
+.glossary .slider .list ul li#active {
+  position: relative;
+}
+.glossary .slider .list ul li#active::before {
+  content: "";
+  left: -54px;
+  top: 14px;
+  position: absolute;
+  height: 1px;
+  width: 46px;
+  transition: all 0.3s ease 0s;
+  background-color: #22BF95;
+}
+.glossary .slider .list .arrow1 {
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+.glossary .slider .list .arrow2 {
+  cursor: pointer;
+  position: absolute;
+  top: 56px;
+  right: 24px;
+}
+.glossary .slider .slid h3 {
+  font-size: 32px;
+  line-height: 40px;
+  color: #1A1A1A;
+  font-family: "Actor", sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 32px 0 24px 16px;
+}
+.glossary .slider .slid p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #191919;
+  padding-left: 16px;
+  border-left: 1.5px solid #22BF95;
+}
+
+.faqs {
+  padding: 24px 20px;
+}
+.faqs .title {
+  margin-bottom: 24px;
+}
+.faqs .title hr {
+  margin-bottom: 10px;
+  border: none;
+  height: 1.5px;
+  background-color: #B2B2B2;
+}
+.faqs .title img {
+  width: 110px;
+  height: 18px;
+}
+.faqs .block span {
+  font-family: "Actor", sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  color: #E5E5E5;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 35px;
+}
+.faqs .block .question {
+  display: flex;
+  align-items: center;
+  height: 114px;
+  cursor: pointer;
+}
+.faqs .block .question p {
+  flex-grow: 1;
+  font-family: "Aclonica", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #191919;
+  overflow-y: visible;
+}
+.faqs .block .question > div {
+  margin-left: 78px;
+  width: 16px;
+}
+.faqs .block .answer {
+  display: none;
+}
+.faqs .block.blockActive .question > div {
+  transform: scale(1, -1);
+}
+.faqs .block.blockActive .answer {
+  display: flex;
+  align-items: center;
+  height: 90px;
+}
+.faqs .block.blockActive .answer p {
+  flex-grow: 1;
+  font-family: "Aclonica", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #191919;
+  overflow-y: visible;
+}
+.faqs .block.blockActive .answer > div {
+  margin-left: 7px;
+  width: 16px;
+}
+.faqs > :last-child {
+  text-align: center;
+  margin-top: 20px;
+}
+.faqs > :last-child a {
+  font-family: "Acme", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 24px;
+  color: #22BF95;
+  letter-spacing: 2px;
+}
+.faqs > :last-child a:hover {
+  font-size: 14px;
+  line-height: 24px;
+  color: #01F973;
+}
+
+footer {
+  background-color: #F2F2F2;
+  font-family: "Aclonica", sans-serif;
+  font-weight: 400;
+}
+footer .wrapper div nav {
+  font-family: "Acme", sans-serif;
+  padding: 17px;
+}
+footer .wrapper div nav ul li {
+  list-style-type: none;
+  display: flex;
+}
+footer .wrapper div nav ul li:last-child a {
+  padding-bottom: 0;
+}
+footer .wrapper div nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 24px;
+  color: #7F7F7F;
+  letter-spacing: 2px;
+  padding: 6px;
+}
+footer .wrapper div nav ul li a:hover {
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}
+footer .wrapper div nav > a {
+  font-size: 16px;
+  line-height: 24px;
+  color: #7F7F7F;
+  text-decoration: none;
+  padding: 0 0 3px 6px;
+}
+footer .wrapper div div > hr {
+  border: none;
+  height: 2px;
+  background-color: #22BF95;
+}
+footer .wrapper div div .contact {
+  padding: 8px 23px;
+}
+footer .wrapper div div .contact > :first-child {
+  font-size: 16px;
+  line-height: 36px;
+  color: #7F7F7F;
+}
+footer .wrapper div div .contact > :nth-child(2) {
+  text-decoration: none;
+  display: block;
+  padding-bottom: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7F7F7F;
+}
+footer .wrapper div div .contact > :nth-child(2):hover {
+  font-size: 18px;
+  line-height: 24px;
+  color: #333;
+}
+footer .wrapper div div .contact div {
+  font-size: 12px;
+  line-height: 20px;
+  color: #7F7F7F;
+}
+footer .wrapper div div .contact > :last-child {
+  padding-top: 7px;
+  display: block;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: #22BF95;
+}
+footer .wrapper div div .contact > :last-child:hover {
+  font-size: 14px;
+  line-height: 20px;
+  color: #01F973;
+}
+footer .wrapper .social hr {
+  border: none;
+  height: 1.5px;
+  background-color: #B2B2B2;
+}
+footer .wrapper .social > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 24px;
+}
+footer .wrapper .social > div div {
+  display: flex;
+  margin: 18px auto 11px;
+}
+footer .wrapper .social > div div a {
+  padding: 3px;
+  margin-right: 47px;
+}
+footer .wrapper .social > div div a:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 1440px) {
+  header .headerContainer {
+    display: flex;
+    padding: 20px 90px 122px 84px;
+  }
+  header .headerContainer .logo a img {
+    width: 110.44px;
+    height: 24px;
+  }
+  header .headerContainer .headerMenu .menuIcon {
+    display: none;
+  }
+  header .headerContainer .headerMenu nav {
+    background: none;
+    position: static;
+    padding-top: 0;
+  }
+  header .headerContainer .headerMenu nav ul {
+    display: flex;
+  }
+  header .headerContainer .headerMenu nav ul li a {
+    color: #FFFFFF;
+    width: 120px;
+    text-align: center;
+  }
+  header .headerContainer .headerMenu nav ul li a:hover {
+    color: #fff;
+  }
+  header .headerContainer .headerMenu nav ul li hr {
+    margin-bottom: 0;
+    background-color: #FFFFFF;
+  }
+  header .headerContainer .headerMenu nav ul li:nth-child(7) a {
+    margin: 0 20px 0 0;
+  }
+  header .headerContainer .headerMenu nav ul li:last-child a {
+    margin-bottom: 0;
+  }
+  header h1 {
+    font-size: 110px;
+    line-height: 130px;
+    color: #fff;
+    width: 1110px;
+    margin: 0 auto 148px auto;
+  }
+  header .subNav {
+    width: 770px;
+    height: 80px;
+    border-top: 5px solid #22BF95;
+    bottom: -40px;
+  }
+  header .subNav a {
+    font-size: 12px;
+    line-height: 24px;
+    color: #7F7F7F;
+  }
+  header .subNav a:nth-child(2) {
+    display: flex;
+    align-items: center;
+  }
+  header .subNav a:nth-child(2)::before, header .subNav a:nth-child(2)::after {
+    font-size: 41px;
+    line-height: 41px;
+    font-weight: 400;
+  }
+  header .subNav a:nth-child(2)::before, header .subNav a:nth-child(2)::after {
+    padding: 0 102px;
+  }
+
+  .tips {
+    padding: 138px 135px;
+    width: 1440px;
+    margin: 0 auto;
+  }
+  .tips .title {
+    margin-bottom: 101px;
+  }
+  .tips .title hr {
+    margin-bottom: 20px;
+  }
+  .tips .title img {
+    width: 247.33px;
+    height: 40.85px;
+  }
+  .tips .accordion hr {
+    margin-top: 0;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionHeader {
+    padding-top: 50px;
+    align-items: flex-start;
+    flex-grow: 0;
+    justify-content: space-between;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionHeader h3 {
+    font-size: 42px;
+    line-height: 54px;
+    color: #191919;
+    word-wrap: break-word;
+    flex-grow: 0;
+    width: 340px;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionBody {
+    display: flex;
+    align-items: flex-start;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionBody > img {
+    display: block;
+    width: 370px;
+    padding: 50px;
+    margin: 40px 0;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionBody > div {
+    padding: 0 200px 0 136px;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionBody > div p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #191919;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionBody > div div {
+    margin: 60px 0 24px 0;
+    display: flex;
+    align-items: center;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionBody > div div img {
+    padding-right: 20.5px;
+  }
+  .tips .accordion .accordionPanel.activePanel .accordionBody > div div p {
+    font-size: 13px;
+    line-height: 24px;
+    color: #7f7f7f;
+  }
+  .tips .accordion .accordionPanel .accordionHeader {
+    padding-right: 52px;
+  }
+  .tips .accordion .accordionPanel .accordionHeader h3 {
+    font-size: 24px;
+    line-height: 36px;
+    color: #191919;
+  }
+  .tips .accordion .accordionPanel .accordionHeader span:first-child {
+    font-size: 110px;
+    line-height: 130px;
+    color: #E5E5E5;
+    padding: 0 96px 19.5px 50px;
+  }
+  .tips .accordion .accordionPanel .accordionHeader span:last-child {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #22BF95;
+  }
+  .tips .accordion .accordionPanel .accordionHeader span:last-child::before, .tips .accordion .accordionPanel .accordionHeader span:last-child::after {
+    width: 18px;
+    height: 2px;
+    left: 6.5px;
+    top: 14.5px;
+  }
+
+  .glossary {
+    padding: 24px 0;
+  }
+  .glossary .title {
+    padding: 0 135px;
+    margin: 0 auto 50px;
+    width: 1440px;
+  }
+  .glossary .title hr {
+    margin-bottom: 19.5px;
+  }
+  .glossary .title img {
+    width: 342px;
+    height: 41px;
+  }
+  .glossary .slider {
+    background: linear-gradient(45deg, #E1E1E1, #FFFFFF);
+    padding: 60px 0;
+    display: flex;
+  }
+  .glossary .slider .list {
+    margin-left: -17px;
+  }
+  .glossary .slider .list ul {
+    padding: 60.5px 73px 28.5px 151px;
+  }
+  .glossary .slider .list ul li#active {
+    position: relative;
+  }
+  .glossary .slider .list ul li#active::before {
+    left: -134px;
+    top: 14px;
+    width: 105px;
+  }
+  .glossary .slider .list .arrow1 img {
+    width: 25px;
+  }
+  .glossary .slider .list .arrow2 {
+    top: 70px;
+  }
+  .glossary .slider .list .arrow2 img {
+    width: 25px;
+  }
+  .glossary .slider .slid h3 {
+    font-size: 90px;
+    line-height: 120px;
+    color: #1A1A1A;
+    padding: 130px 135px 73px 130px;
+  }
+  .glossary .slider .slid p {
+    font-size: 24px;
+    line-height: 36px;
+    color: #191919;
+    padding-left: 36px;
+    border-left: 1.67px solid #22BF95;
+    margin-left: 200px;
+    width: 500px;
+  }
+
+  .faqs {
+    padding: 136px 135px 102px 135px;
+    width: 1440px;
+    margin: 0 auto;
+  }
+  .faqs .title {
+    margin-bottom: 100px;
+  }
+  .faqs .title hr {
+    margin-bottom: 20px;
+  }
+  .faqs .title img {
+    width: 272.62px;
+    height: 32.48px;
+  }
+  .faqs .block span {
+    font-size: 110px;
+    line-height: 130px;
+    color: #E5E5E5;
+    margin-right: 100px;
+  }
+  .faqs .block .question {
+    height: 196px;
+  }
+  .faqs .block .question p {
+    font-size: 24px;
+    line-height: 36px;
+    color: #191919;
+  }
+  .faqs .block .question > div {
+    margin: 0 80px 0 200px;
+  }
+  .faqs .block .question > div img {
+    width: 30px;
+  }
+  .faqs .block.blockActive .answer {
+    display: flex;
+    align-items: center;
+    height: 152px;
+  }
+  .faqs .block.blockActive .answer p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #191919;
+  }
+  .faqs .block.blockActive .answer > div {
+    margin-left: 210px;
+    width: 30px;
+  }
+  .faqs > :last-child {
+    margin-top: 50px;
+  }
+
+  footer .wrapper {
+    padding: 78px 135px 69px 135px;
+    width: 1440px;
+    margin: 0 auto;
+  }
+  footer .wrapper > :first-child {
+    display: flex;
+  }
+  footer .wrapper > :first-child nav {
+    font-family: "Acme", sans-serif;
+    padding: 0 101px 0 0;
+  }
+  footer .wrapper > :first-child nav ul li a {
+    padding: 0 0 30px 0;
+    width: 169px;
+  }
+  footer .wrapper > :first-child nav > a {
+    padding: 0;
+  }
+  footer .wrapper > :first-child div > hr {
+    width: 903px;
+  }
+  footer .wrapper > :first-child div .contact {
+    display: flex;
+    padding: 10px 0 51px;
+  }
+  footer .wrapper > :first-child div .contact > :first-child {
+    font-size: 24px;
+    line-height: 36px;
+    color: #7F7F7F;
+    width: 300px;
+    margin-right: 30px;
+  }
+  footer .wrapper > :first-child div .contact > :nth-child(2) {
+    width: 170px;
+    margin-right: 30px;
+  }
+  footer .wrapper > :first-child div .contact div {
+    font-size: 16px;
+    line-height: 24px;
+    color: #7F7F7F;
+    width: 270px;
+    margin-right: 30px;
+  }
+  footer .wrapper > :first-child div .contact > :last-child {
+    padding-top: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #22BF95;
+    width: 100px;
+  }
+  footer .wrapper > :first-child div .contact > :last-child:hover {
+    font-size: 18px;
+    line-height: 24px;
+    color: #01F973;
+  }
+  footer .wrapper .social > div {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding-bottom: 0;
+  }
+  footer .wrapper .social > div div {
+    display: flex;
+    margin: 0;
+  }
+  footer .wrapper .social > div div a {
+    padding: 3px;
+    margin-right: 47px;
+  }
+  footer .wrapper .social > div div a:last-child {
+    margin-right: 0;
+  }
+  footer .wrapper .social > div > img {
+    width: 169px;
+    height: 58px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
