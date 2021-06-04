@@ -1,0 +1,158 @@
+@import "common";
+
+.glossary {
+  padding: 24px 0;
+  font-family: "Aclonica", sans-serif;
+
+  .title {
+    padding-top: 10px;
+    margin: 0 20px 24px;
+    border-top: 1.5px solid $color-block-divider;
+
+    img {
+      max-width: 114px;
+    }
+  }
+
+  .slider {
+    background: linear-gradient(45deg, #E1E1E1, $color-primary);
+    padding: 24px 20px;
+
+    .list {
+      position: relative;
+      background: $color-primary;
+      box-shadow: 0 12px 24px $color-mark;
+      border-radius: 5px;
+      @include fontProp(16px, 32px, $color-secondary-text);
+
+      ul {
+        padding: 39px 0 41px 62px;
+
+        li {
+          list-style-type: none;
+          cursor: pointer;
+          padding-left: 8px;
+
+          &#active {
+            position: relative;
+
+            &::before {
+              content: "";
+              left: 0;
+              top: 14px;
+              position: absolute;
+              height: 1px;
+              width: 46px;
+              transition: all 0.3s ease 0s;
+              background-color: $color-link;
+              transform: translateX(-100%);
+
+            }
+          }
+        }
+      }
+
+      .next-btn {
+        cursor: pointer;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+      }
+
+      .prev-btn {
+        cursor: pointer;
+        position: absolute;
+        top: 56px;
+        right: 24px;
+      }
+    }
+
+    .slide {
+      h3 {
+        @include fontProp(32px, 40px, #1A1A1A);
+        font-family: "Actor", sans-serif;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 32px 0 24px 16px;
+      }
+
+      p {
+        @include fontProp(16px, 24px, $color-primary-text);
+        padding-left: 16px;
+        border-left: 1.5px solid $color-link;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .glossary {
+    padding: 24px 0;
+
+    .title {
+      padding-top: 20px;
+      margin: 0 auto 50px;
+      max-width: 1170px;
+
+      img {
+        max-width: 342px;
+      }
+    }
+
+    .slider {
+      background: linear-gradient(45deg, #E1E1E1, $color-primary);
+      padding: 60px 0;
+      display: flex;
+      justify-content: center;
+
+      .list {
+        margin-left: -17px;
+
+        ul {
+          padding: 60.5px 73px 28.5px 151px;
+
+          li {
+            padding-left: 30px;
+
+            &#active {
+              position: relative;
+
+              &::before {
+                width: 105px;
+              }
+            }
+          }
+        }
+
+        .next-btn {
+          img {
+            width: 25px;
+          }
+        }
+
+        .prev-btn {
+          img {
+            width: 25px;
+          }
+
+          top: 70px;
+        }
+      }
+
+      .slide {
+        h3 {
+          @include fontProp(90px, 120px, #1A1A1A);
+          padding: 130px 135px 73px 130px;
+        }
+
+        p {
+          @include fontProp(24px, 36px, $color-primary-text);
+          padding-left: 36px;
+          border-left: 1.67px solid $color-link;
+          margin-left: 200px;
+          max-width: 500px;
+        }
+      }
+    }
+  }
+}
