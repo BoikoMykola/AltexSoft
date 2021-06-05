@@ -84,13 +84,14 @@
     }
   }
 
-  > :last-child {
+  .more-question {
     text-align: center;
     margin-top: 20px;
 
-    a {
+    button {
+      border: none;
+      background-color: $color-primary;
       font-family: "Acme", sans-serif;
-      text-decoration: none;
       text-transform: uppercase;
       @include fontProp(12px, 24px, $color-link);
       letter-spacing: 2px;
@@ -160,7 +161,7 @@
       }
     }
 
-    > :last-child {
+    .more-question {
       margin-top: 50px;
     }
   }

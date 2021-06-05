@@ -110,7 +110,6 @@ header {
                 @include fontProp(12px, 24px, $color-link);
                 letter-spacing: 2px;
                 padding: 8px;
-                position: relative;
 
                 &:hover {
                   @include fontProp(14px, 24px, $color-link-hover);
@@ -135,13 +134,19 @@ header {
               }
 
 
-              &.get-skout-btn {
-                a {
+              &.get-skout-btn, &.login-btn {
+                button {
                   margin: 197px 0 16px 0;
                   border: 1px solid $color-link;
                   border-radius: 20px;
                   width: 180px;
                   text-align: center;
+                  @include fontProp(12px, 24px, $color-link);
+                  letter-spacing: 2px;
+                  padding: 8px;
+                  text-transform: uppercase;
+                  background-color: $color-primary;
+                  font-family: 'Acme', sans-serif;
 
                   &:hover {
                     @include fontProp(14px, 24px, $color-link-hover);
@@ -152,18 +157,9 @@ header {
               }
 
               &.login-btn {
-                a {
-                  border: 1px solid $color-link;
-                  border-radius: 20px;
+                button {
                   width: 90px;
-                  text-align: center;
-                  margin-bottom: 40px;
-
-                  &:hover {
-                    @include fontProp(14px, 24px, $color-link-hover);
-                    color: $color-primary;
-                    background-color: $color-link;
-                  }
+                  margin: 0 0 40px;
                 }
               }
             }
@@ -210,7 +206,7 @@ header {
     }
 
     .login-btn, .get-skout-btn {
-      a {
+      button {
         border-color: $color-secondary-text !important;
 
         &:hover {
@@ -335,15 +331,21 @@ header {
                   }
                 }
 
-                &.get-skout-btn {
-                  a {
+                &.get-skout-btn, &.login-btn {
+                  button {
+                    border-color: $color-primary;
+                    color: $color-primary;
+                    background: none;
                     margin: 0 20px 0 0;
+                    &:hover{
+                      border-color: $color-link;
+                    }
                   }
                 }
 
                 &.login-btn {
-                  a {
-                    margin-bottom: 0;
+                  button {
+                    margin: 0;
                   }
                 }
               }
