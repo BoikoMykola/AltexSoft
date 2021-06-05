@@ -43,8 +43,6 @@
           }
 
           .accordion-description {
-            position: relative;
-            bottom: 50px;
             p {
               @include fontProp(14px, 24px, $color-primary-text);
 
@@ -174,6 +172,8 @@
             }
 
             > .accordion-description {
+              position: relative;
+              bottom: 50px;
               padding: 0 200px 0 136px;
 
               p {

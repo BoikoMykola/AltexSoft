@@ -2,6 +2,8 @@ const menuIcon = document.querySelector(".menu-icon");
 menuIcon.addEventListener("click", function () {
     const navigate = document.getElementsByTagName("nav");
     document.body.classList.toggle("lock")
+    const subNav = document.getElementsByClassName("sub-nav-block");
+    subNav[0].classList.toggle("isHidden");
     navigate[0].classList.toggle("active");
     menuIcon.classList.toggle("active")
 });

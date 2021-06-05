@@ -4,6 +4,7 @@ header {
   font-family: 'Acme', sans-serif;
   position: relative;
   width: 100%;
+  min-width: 375px;
   z-index: 10;
   background: linear-gradient(45deg, #12C1E6, #01F973);
 
@@ -208,6 +209,7 @@ header {
     .login-btn, .get-skout-btn {
       button {
         border-color: $color-secondary-text !important;
+        color: $color-secondary-text !important;
 
         &:hover {
           @include fontProp(14px, 24px, $color-primary);
@@ -282,6 +284,9 @@ header {
       box-shadow: none;
     }
   }
+}
+.isHidden{
+  display: none;
 }
 
 @media (min-width: 1440px) {
