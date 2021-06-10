@@ -1,0 +1,76 @@
+@import "common";
+
+.what-is{
+
+
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  font-family: Aclonica, serif;
+  .title{
+    @include fontProp(24px, 36px, $color-primary-text);
+    padding: 20px 0;
+  }
+  .phrase{
+    @include fontProp(13px, 24px, $color-primary-text);
+    padding-bottom: 20px;
+  }
+  .what-img{
+    align-self: center;
+    margin-bottom: 20px;
+    max-width: 270px;
+  }
+  .btn-block {
+    display: flex;
+    flex-direction: column;
+    button {
+      @include tpl-button;
+      align-self: center;
+      margin-bottom: 20px;
+      &:last-child{
+        background-color: $color-link;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .what-is{
+    padding: 50px 135px;
+    height: 700px;
+    flex-wrap: wrap;
+    justify-content: center;
+    .title{
+      @include fontProp(42px, 54px, $color-primary-text);
+      padding: 40px 0;
+    }
+    .phrase{
+      @include fontProp(16px, 24px, $color-primary-text);
+      padding-bottom: 100px;
+      max-width: 470px;
+    }
+    .what-img{
+      align-self: center;
+      margin: 0 100px 20px 0;
+      max-width: 600px;
+
+      order: -1;
+    }
+    .btn-block {
+      flex-direction: row;
+      justify-content: space-between;
+      button {
+        @include tpl-button;
+        align-self: center;
+
+
+        &:last-child{
+          background-color: $color-link;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+

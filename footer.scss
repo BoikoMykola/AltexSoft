@@ -1,0 +1,200 @@
+@import "common";
+
+footer {
+  background-color: $color-footer-back;
+  font-family: "Aclonica", sans-serif;
+  font-weight: 400;
+
+  .wrapper {
+    .container {
+      nav {
+        font-family: "Acme", sans-serif;
+        padding: 17px;
+
+        .footer-nav {
+          li {
+            list-style-type: none;
+            display: flex;
+
+            a {
+              text-decoration: none;
+              text-transform: uppercase;
+              @include fontProp(12px, 24px, $color-secondary-text);
+              letter-spacing: 2px;
+              padding: 6px;
+
+              &:hover {
+                @include fontProp(14px, 24px, #333);
+              }
+            }
+
+            &:last-child {
+              display: flex;
+              flex-direction: column;
+              text-transform: uppercase;
+              @include fontProp(12px, 24px, $color-secondary-text);
+              letter-spacing: 2px;
+              padding-left: 6px;
+
+              a {
+                padding: 0 0 6px;
+                @include fontProp(16px, 24px, $color-secondary-text);
+
+                &:hover {
+                  @include fontProp(18px, 24px, #333);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .contact-container {
+        .contact {
+          border-top: 2px solid $color-link;
+          padding: 8px 23px;
+
+          > :first-child {
+            @include fontProp(16px, 36px, $color-secondary-text);
+          }
+
+          > :nth-child(2) {
+            text-decoration: none;
+            display: block;
+            padding-bottom: 4px;
+            @include fontProp(16px, 24px, $color-secondary-text);
+
+            &:hover {
+              @include fontProp(18px, 24px, #333);
+            }
+          }
+
+          div {
+            @include fontProp(12px, 20px, $color-secondary-text);
+          }
+
+          > :last-child {
+            padding-top: 7px;
+            display: block;
+            text-decoration: none;
+            @include fontProp(12px, 20px, $color-link);
+
+            &:hover {
+              @include fontProp(14px, 20px, #01F973);
+            }
+          }
+        }
+      }
+    }
+
+    .social {
+      border-top: 1.5px solid $color-block-divider;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 24px;
+
+      div {
+        display: flex;
+        margin: 18px auto 11px;
+
+        a {
+          padding: 3px;
+          margin-right: 47px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  footer {
+    .wrapper {
+      padding: 78px 135px 69px 135px;
+      max-width: 1440px;
+      margin: 0 auto;
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+
+        nav {
+          font-family: "Acme", sans-serif;
+          padding: 0 10px 0 0;
+
+          .footer-nav {
+            li {
+              a {
+                padding: 0 0 30px 0;
+              }
+            }
+          }
+        }
+
+        .contact-container {
+
+          .contact {
+            display: flex;
+            padding: 10px 0 51px;
+
+            > :first-child {
+              @include fontProp(24px, 36px, $color-secondary-text);
+              width: 300px;
+              margin-right: 30px;
+            }
+
+            > :nth-child(2) {
+              width: 170px;
+              margin-right: 30px;
+            }
+
+            div {
+              @include fontProp(16px, 24px, $color-secondary-text);
+              width: 270px;
+              margin-right: 30px;
+            }
+
+            > :last-child {
+              padding-top: 0;
+              @include fontProp(16px, 24px, $color-link);
+              width: 100px;
+
+              &:hover {
+                @include fontProp(18px, 24px, #01F973);
+              }
+            }
+          }
+        }
+      }
+
+      .social {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 28px 0 0;
+
+        div {
+          display: flex;
+          margin: 0;
+
+          a {
+            padding: 3px;
+            margin-right: 47px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        > img {
+          max-width: 169px;
+        }
+      }
+    }
+  }
+}

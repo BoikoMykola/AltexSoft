@@ -1,0 +1,131 @@
+@import "common";
+
+.partner-block{
+  margin-top: 300px;
+  padding: 40px 15px;
+}
+
+.partners-big{
+  text-align: center;
+  img {
+    max-width: 210px;
+    margin-bottom: 60px;
+  }
+  blockquote{
+    p{
+      @include fontProp(16px, 24px, $color-secondary-text);
+      font-family: Aclonica, serif;
+      padding-bottom: 20px;
+    }
+    cite{
+      @include fontProp(10px, 24px, $color-secondary-text);
+      font-family: Acme, serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+  }
+}
+
+.partners{
+
+
+  .slick-track{
+    align-items: center;
+    width: 100%;
+  }
+
+  .partner-item{
+
+    text-align: center;
+    img{
+      opacity: 0.5;
+      max-width: 55px;
+    }
+  }
+}
+
+.partner-list{
+  background-color: $color-mark;
+  border: none;
+  width: 100%;
+  height: 5px;
+  .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    li {
+      font-size: 0;
+      list-style: none;
+
+      button {
+        font-size: 0;
+        width: 70px;
+        height: 3px;
+        background-color: $color-mark;
+        border-radius: 2px;
+        border: none;
+      }
+
+      &.slick-active {
+        button{
+          background-color: $color-link;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .partner-block{
+    margin-top: 200px;
+    padding: 100px 135px;
+  }
+
+  .partners-big{
+    text-align: center;
+    padding: 100px 0;
+    .partner-big-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+       margin-right: 100px;
+        width: 310px;
+      }
+
+      blockquote {
+        max-width: 570px;
+        p {
+          @include fontProp(24px, 36px, $color-secondary-text);
+          text-align: left!important;
+        }
+
+        cite {
+          @include fontProp(12px, 24px, $color-secondary-text);
+        }
+      }
+    }
+  }
+
+  .partners{
+    .partner-item{
+      img{
+        max-width: 130px;
+      }
+    }
+  }
+
+  .partner-list{
+    .slick-dots {
+
+      li {
+
+        button {
+          width: 100px;
+        }
+      }
+    }
+  }
+}

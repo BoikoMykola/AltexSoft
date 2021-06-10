@@ -1,0 +1,102 @@
+@import "common";
+
+.plans-block {
+  position: absolute;
+  top: -300px;
+  font-family: "Aclonica", sans-serif;
+
+  .plans-title {
+    margin-bottom: 30px;
+    @include fontProp(24px, 36px, $color-primary-text);
+    text-align: center;
+  }
+
+  .plans {
+    min-width: 0;
+    padding-left: 13px;
+    .plan-item {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 35px 25px 55px;
+      background-color: $color-primary;
+      box-shadow: 0 12px 24px $color-mark;
+      border-radius: 5px;
+      margin-left: 13px;
+      max-width: 260px;
+      border-bottom: 1px solid $color-footer-back;
+
+      .plan-title {
+        @include fontProp(12px, 24px, $color-link);
+        font-family: "Acme", sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+        text-align: center;
+
+      }
+
+      .plan-option {
+        display: flex;
+        align-items: center;
+        border-top: 1.5px solid $color-footer-back;
+        @include fontProp(13px, 24px, $color-primary-text);
+        padding: 13px 0;
+        >img{
+          max-width: 25px;
+          margin-right: 20px;
+        }
+      }
+      .plan-btn {
+        @include tpl-button;
+        margin-top: 40px;
+      }
+    }
+  }
+
+
+}
+
+@media (min-width: 1440px) {
+  .plans-block {
+    top: -400px;
+    .plans-title {
+      margin-bottom: 70px;
+      @include fontProp(42px, 54px, $color-primary-text);
+    }
+
+    .plans {
+      padding-left: 0;
+      .plan-item {
+        padding: 40px 55px;
+        margin: 0 30px 0 15px;
+        max-width: 330px;
+
+        .plan-title {
+          @include fontProp(18px, 24px, $color-link);
+          padding-bottom: 40px;
+          text-align: center;
+        }
+
+        .plan-option {
+          display: flex;
+          align-items: center;
+          >img{
+            max-width: 35px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.color-item{
+  background: linear-gradient(135deg, #1AB4F8, #00E89D);
+  .plan-title, .plan-option{
+    color: $color-primary!important;
+  }
+}
+
+.non-active{
+  color: $color-footer-back!important;
+}

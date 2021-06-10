@@ -1,0 +1,145 @@
+@import "common";
+
+.glossary{
+  background: linear-gradient(45deg, #E1E1E1, $color-primary);
+}
+.glossary-slider{
+  padding: 30px 30px 365px 30px;
+  font-family: "Aclonica", sans-serif;
+
+
+  .glossary-title {
+    margin-bottom: 40px;
+    @include fontProp(24px, 36px, $color-primary-text);
+  }
+
+  .list {
+    margin-bottom: 50px;
+
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        font-size: 0;
+        padding: 10px;
+        list-style: none;
+
+        button {
+          font-size: 0;
+          width: 5px;
+          height: 5px;
+          background-color: $color-link;
+          border-radius: 50%;
+          border: 1px solid $color-link;
+
+        }
+
+        &.slick-active {
+          border: 1px solid $color-link;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .slider {
+    .slide-item {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 50px;
+      img {
+        max-width: 260px;
+        align-self: center;
+      }
+
+      .slide-text {
+        .slide-title {
+          @include fontProp(12px, 24px, $color-primary-text);
+          font-family: "Acme", sans-serif;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          padding: 20px 0 10px;
+        }
+
+        .slide-phrase {
+          @include fontProp(13px, 24px, $color-primary-text);
+
+        }
+      }
+    }
+  }
+
+  .slider-btn {
+    @include tpl-button($bgc: $color-link, $font-color: $color-primary);
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .glossary-slider {
+    padding: 120px 125px 550px 135px;
+
+    .glossary-title {
+      margin-bottom: 40px;
+      @include fontProp(42px, 54px, $color-primary-text);
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+
+      .list {
+        margin-bottom: 50px;
+        vertical-align: center;
+
+        .slick-dots {
+          flex-direction: column;
+
+          li {
+            button {
+              width: 6px;
+              height: 6px;
+            }
+          }
+        }
+      }
+
+      .slider {
+        min-width: 0;
+        .slide-item {
+          flex-direction: row-reverse;
+          justify-content: space-around;
+          align-items: center;
+
+          img {
+            max-width: 350px;
+            align-self: center;
+          }
+
+          .slide-text {
+            padding-bottom: 50px;
+
+            .slide-title {
+              @include fontProp(18px, 24px, $color-primary-text);
+              padding-bottom: 18px;
+            }
+
+            .slide-phrase {
+              @include fontProp(16px, 24px, $color-primary-text);
+              max-width: 400px;
+            }
+          }
+        }
+      }
+    }
+
+    .slider-btn {
+      @include tpl-button($bgc: $color-link, $font-color: $color-primary);
+      display: block;
+margin-left: 100px;
+    }
+  }
+}

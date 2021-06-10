@@ -1,0 +1,55 @@
+
+
+$color-secondary-text: #7F7F7F;
+$color-footer-back: #F2F2F2;
+$color-link: #22BF95;
+$color-link-hover: #59D865;
+$color-primary: #FFF;
+$color-primary-text: #191919;
+$color-block-divider: #B2B2B2;
+$color-mark: #E5E5E5;
+
+
+@mixin fontProp($fs,$lh,$c) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $c;
+}
+
+.isHidden{
+  display: none;
+}
+
+@mixin tpl-button($border-color: $color-link, $font-color: $color-link, $bgc: $color-primary, $width: 200px,
+$font-color-hover: $color-primary, $bgc-hover: $color-link) {
+  border: 1px solid $border-color;
+  border-radius: 20px;
+  text-align: center;
+  @include fontProp(12px, 24px, $font-color);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: $bgc;
+  font-family: 'Acme', sans-serif;
+  padding: 8px;
+  width: $width;
+  box-shadow: 0 6px 12px rgba(127, 127, 127, 0.3);
+  &:hover {
+    @include fontProp(14px, 24px, $font-color-hover);
+    background-color: $bgc-hover;
+    box-shadow: 0 0 16px rgba(127, 127, 127, 0.8);
+  }
+}
+
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+}

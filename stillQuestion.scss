@@ -1,0 +1,133 @@
+@import "common";
+
+.still-question {
+  display: flex;
+  flex-direction: column;
+  font-family: Aclonica, serif;
+
+  .still-phrase-block {
+    padding: 30px;
+
+    .still-title {
+      @include fontProp(24px, 36px, $color-primary-text);
+      padding: 20px 0;
+    }
+
+    .still-phrase {
+      @include fontProp(13px, 24px, $color-primary-text);
+    }
+  }
+
+  .still-img {
+    align-self: center;
+    max-width: 375px;
+  }
+}
+.still-btn-block {
+  position: relative;
+  bottom: 50px;
+  margin: 0 auto;
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #1BD6D7, #01ED95, #0FBFE1);
+
+  div {
+    padding: 20px 25px;
+
+    p {
+      @include fontProp(10px, 24px, $color-primary);
+      font-family: Acme, serif;
+      border-bottom: 1px solid $color-primary;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding-bottom: 5px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px 0 0 15px;
+      height: 30px;
+      text-decoration: none;
+      @include fontProp(13px, 24px, $color-primary);
+      letter-spacing: 2px;
+      font-family: Aclonica, serif;
+      img {
+        width: 25px;
+        height: 25px;
+        padding: 7px;
+        border-radius: 50%;
+        border: 1px solid $color-primary;
+        display: flex;
+        align-items: center;
+      }
+      &:hover{
+        img {
+          width: 29px;
+          height: 29px;
+          padding: 9px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .still-question {
+    flex-direction: row-reverse;
+    align-items: center;
+    .still-phrase-block {
+      padding: 130px;
+
+      .still-title {
+        @include fontProp(42px, 54px, $color-primary-text);
+        padding: 40px 0;
+      }
+
+      .still-phrase {
+        @include fontProp(16px, 24px, $color-primary-text);
+      }
+    }
+
+    .still-img {
+      max-width: 50%;
+    }
+  }
+  .still-btn-block {
+    max-width: 1000px;
+    flex-direction: row;
+    justify-content: space-between;
+    background: linear-gradient(160deg, #1BD6D7, #01ED95, #0FBFE1);
+
+    div {
+      padding: 30px 70px;
+
+      p {
+        @include fontProp(12px, 24px, $color-primary);
+      }
+
+      a {
+        display: flex;
+        margin: 35px 0 0 35px;
+        height: 40px;
+        @include fontProp(24px, 36px, $color-primary);
+
+        img {
+          width: 35px;
+          height: 35px;
+          padding: 9px;
+          margin-left: 20px;
+        }
+        &:hover{
+          img {
+            width: 39px;
+            height: 39px;
+            padding: 11px;
+          }
+        }
+      }
+    }
+  }
+}
