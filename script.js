@@ -65,12 +65,13 @@ $('.slider').slick({
     $('.partners').slick({
         arrows: false,
         slidesToShow: 5,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 30000,
-        appendDots: $('.partner-list'),
+        // dots: true,
+        // autoplay: true,
+        // autoplaySpeed: 30000,
+        // appendDots: $('.partner-list'),
         asNavFor: ".partners-big",
-        infinite: false
+        focusOnSelect: true
+        // infinite: false
     });
 });
 

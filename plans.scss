@@ -4,6 +4,8 @@
   position: absolute;
   top: -300px;
   font-family: "Aclonica", sans-serif;
+  width: calc(100vw - 18px);
+  max-width: 1440px;
 
   .plans-title {
     margin-bottom: 30px;

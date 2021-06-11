@@ -29,50 +29,26 @@
 
 .partners{
 
-
+  transform: none !important;
   .slick-track{
-    align-items: center;
-    width: 100%;
+    align-items: baseline;
+    //width: 100%;
   }
 
   .partner-item{
-
+cursor: pointer;
     text-align: center;
+    border-bottom: 3px solid $color-mark;
     img{
       opacity: 0.5;
       max-width: 55px;
+      padding: 5px 0;
     }
-  }
-}
-
-.partner-list{
-  background-color: $color-mark;
-  border: none;
-  width: 100%;
-  height: 5px;
-  .slick-dots {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    li {
-      font-size: 0;
-      list-style: none;
-
-      button {
-        font-size: 0;
-        width: 70px;
-        height: 3px;
-        background-color: $color-mark;
-        border-radius: 2px;
-        border: none;
-      }
-
-      &.slick-active {
-        button{
-          background-color: $color-link;
-        }
-      }
+    &:hover{
+      border-bottom: 3px solid $color-secondary-text;
+    }
+    &.slick-current{
+      border-bottom: 3px solid $color-link;
     }
   }
 }
@@ -113,18 +89,6 @@
     .partner-item{
       img{
         max-width: 130px;
-      }
-    }
-  }
-
-  .partner-list{
-    .slick-dots {
-
-      li {
-
-        button {
-          width: 100px;
-        }
       }
     }
   }
