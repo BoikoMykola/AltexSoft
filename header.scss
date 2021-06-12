@@ -137,7 +137,7 @@ header {
 
               &.get-skout-btn, &.login-btn {
                 button {
-                  margin: 197px 0 16px 0;
+                  margin: 200px 0 15px;
                   border: 1px solid $color-link;
                   border-radius: 20px;
                   width: 180px;
@@ -186,35 +186,35 @@ header {
     }
   }
 
-  .header-container-fixed {
+  #headerContainerFixed {
     position: fixed;
     background-color: $color-primary;
 
     .menu-icon {
       span, &::before, &::after {
-        background-color: $color-secondary-text !important;
+        background-color: $color-secondary-text;
       }
     }
 
     a {
-      color: $color-secondary-text !important;
+      color: $color-secondary-text;
 
       &.current {
         &:after {
-          background-color: $color-secondary-text !important;
+          background-color: $color-secondary-text;
         }
       }
     }
 
     .login-btn, .get-skout-btn {
       button {
-        border-color: $color-secondary-text !important;
-        color: $color-secondary-text !important;
+        border-color: $color-secondary-text;
+        color: $color-secondary-text;
 
         &:hover {
           @include fontProp(14px, 24px, $color-primary);
-          color: $color-primary !important;
-          background-color: $color-secondary-text !important;
+          color: $color-primary;
+          background-color: $color-secondary-text;
         }
       }
     }
@@ -223,8 +223,7 @@ header {
   h1 {
     font-family: 'Actor', sans-serif;
     @include fontProp(40px, 56px, $color-primary);
-    width: 38%;
-    padding: 68px 0 30px;
+    padding: 70px 110px 30px;
     margin: 0 auto;
     text-transform: uppercase;
     text-align: center;
@@ -265,7 +264,7 @@ header {
         }
 
         &:hover {
-          color: #01F973;
+          color: $color-link-hover;
         }
       }
 
@@ -275,9 +274,9 @@ header {
     }
   }
 
-  .sub-nav-fixed {
+  #subNavFixed {
     position: fixed;
-    z-index: 1 !important;
+    z-index: 1;
     top: 72px;
 
     .sub-nav {
@@ -294,7 +293,7 @@ header {
     .header-container {
       .wrapper {
         display: flex;
-        padding: 20px 90px 20px 84px;
+        padding: 20px 90px 20px 85px;
 
         .logo {
 
@@ -384,7 +383,7 @@ header {
           }
 
           &:hover {
-            color: #01F973;
+            color: $color-link-hover;
           }
         }
       }

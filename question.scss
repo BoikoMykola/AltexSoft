@@ -97,7 +97,7 @@
       letter-spacing: 2px;
 
       &:hover {
-        @include fontProp(14px, 24px, #01F973);
+        @include fontProp(14px, 24px, $color-link-hover);
       }
     }
   }
@@ -105,7 +105,7 @@
 
 @media (min-width: 1440px) {
   .block-faqs {
-    padding: 136px 135px 102px 135px;
+    padding: 136px 135px 102px;
     max-width: 1440px;
     margin: 0 auto;
 

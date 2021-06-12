@@ -16,12 +16,12 @@ window.addEventListener("scroll", function () {
     const subNav = document.getElementsByClassName("sub-nav-block");
     if (pageYOffset > 670 && pageYOffset < previous) {
         document.getElementById("logo").src = "image/SKOUT2.png";
-        menu[0].classList.add("header-container-fixed");
-        subNav[0].classList.add("sub-nav-fixed");
+        menu[0].id = "headerContainerFixed";
+        subNav[0].id = "subNavFixed";
     } else {
         document.getElementById("logo").src = "image/SKOUT.png";
-        menu[0].classList.remove("header-container-fixed");
-        subNav[0].classList.remove("sub-nav-fixed");
+        menu[0].removeAttribute("id");
+        subNav[0].removeAttribute("id");
     }
     previous = pageYOffset;
 });
