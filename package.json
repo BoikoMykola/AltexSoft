@@ -1,0 +1,27 @@
+{
+  "name": "homework2",
+  "version": "1.0.0",
+  "description": "homework2",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoikoMykola/AltexSoft.git"
+  },
+  "author": "Mykola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BoikoMykola/AltexSoft/issues"
+  },
+  "homepage": "https://github.com/BoikoMykola/AltexSoft#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0",
+    "trim-newlines": "^4.0.2"
+  }
+}

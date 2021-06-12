@@ -22,26 +22,26 @@ window.addEventListener("scroll", function () {
 });
 
 
-
-$(document).ready(function (){
+$(document).ready(function () {
 
     //  GLOSSARY
-$('.slider').slick({
-    arrows: false,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 30000,
-    appendDots: $('.list')
-});
+    $('.slider').slick({
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 30000,
+        adaptiveHeight: true,
+        appendDots: $('.list')
+    });
 
-//  PLANS
+    //  PLANS
     $('.plans').slick({
         arrows: false,
         slidesToShow: 1,
         variableWidth: true,
         autoplay: true,
         autoplaySpeed: 30000,
-        responsive:[
+        responsive: [
             {
                 breakpoint: 1440,
                 settings: {
@@ -65,13 +65,8 @@ $('.slider').slick({
     $('.partners').slick({
         arrows: false,
         slidesToShow: 5,
-        // dots: true,
-        // autoplay: true,
-        // autoplaySpeed: 30000,
-        // appendDots: $('.partner-list'),
         asNavFor: ".partners-big",
         focusOnSelect: true
-        // infinite: false
     });
 });
 

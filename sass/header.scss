@@ -138,7 +138,7 @@ header {
                 button {
                   @include tpl-button;
                   box-shadow: none;
-                  margin: 197px 0 16px 0;
+                  margin: 200px 0 15px;
                   &:hover{
                     box-shadow: none;
                   }
@@ -147,7 +147,7 @@ header {
 
               &.login-btn {
                 button {
-                  width: 90px;
+                  padding: 8px 22px;
                   margin: 0 0 40px;
                 }
               }
@@ -244,16 +244,12 @@ header {
   }
 }
 
-.isHidden {
-  display: none;
-}
-
 @media (min-width: 1440px) {
   header {
     .header-container {
       .wrapper {
         display: flex;
-        padding: 20px 90px 20px 84px;
+        padding: 20px 90px 20px 85px;
 
         .logo {
 
@@ -340,7 +336,6 @@ header {
 
         button {
           margin-top: 0;
-          width: 200px !important;
         }
       }
     }

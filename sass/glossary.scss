@@ -1,10 +1,11 @@
 @import "common";
 
-.glossary{
+.glossary {
   background: linear-gradient(45deg, #E1E1E1, $color-primary);
 }
-.glossary-slider{
-  padding: 30px 30px 365px 30px;
+
+.glossary-slider {
+  padding: 30px 30px 365px;
   font-family: "Aclonica", sans-serif;
 
 
@@ -45,10 +46,15 @@
   }
 
   .slider {
+    .slick-track {
+      align-items: flex-start;
+    }
+
     .slide-item {
       display: flex;
       flex-direction: column;
       padding-bottom: 50px;
+
       img {
         max-width: 260px;
         align-self: center;
@@ -109,6 +115,7 @@
 
       .slider {
         min-width: 0;
+
         .slide-item {
           flex-direction: row-reverse;
           justify-content: space-around;
@@ -139,7 +146,7 @@
     .slider-btn {
       @include tpl-button($bgc: $color-link, $font-color: $color-primary);
       display: block;
-margin-left: 100px;
+      margin-left: 100px;
     }
   }
 }

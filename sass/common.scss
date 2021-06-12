@@ -20,7 +20,7 @@ $color-mark: #E5E5E5;
   display: none;
 }
 
-@mixin tpl-button($border-color: $color-link, $font-color: $color-link, $bgc: $color-primary, $width: 200px,
+@mixin tpl-button($border-color: $color-link, $font-color: $color-link, $bgc: $color-primary, $btn-width: 55px,
 $font-color-hover: $color-primary, $bgc-hover: $color-link) {
   border: 1px solid $border-color;
   border-radius: 20px;
@@ -30,11 +30,10 @@ $font-color-hover: $color-primary, $bgc-hover: $color-link) {
   text-transform: uppercase;
   background-color: $bgc;
   font-family: 'Acme', sans-serif;
-  padding: 8px;
-  width: $width;
+  padding: 8px $btn-width;
   box-shadow: 0 6px 12px rgba(127, 127, 127, 0.3);
   &:hover {
-    @include fontProp(14px, 24px, $font-color-hover);
+    @include fontProp(12px, 24px, $font-color-hover);
     background-color: $bgc-hover;
     box-shadow: 0 0 16px rgba(127, 127, 127, 0.8);
   }
