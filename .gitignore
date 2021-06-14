@@ -35,3 +35,4 @@
 .idea
 *.css
 *.css.map
+.node_modules
