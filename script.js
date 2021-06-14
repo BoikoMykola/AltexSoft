@@ -43,7 +43,7 @@ $(document).ready(function () {
         autoplaySpeed: 30000,
         responsive: [
             {
-                breakpoint: 1440,
+                breakpoint: 1050,
                 settings: {
                     slidesToShow: 4,
                     autoplay: false,
