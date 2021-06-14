@@ -1,0 +1,17 @@
+
+
+$color-secondary-text: #7F7F7F;
+$color-footer-back: #F2F2F2;
+$color-link: #22BF95;
+$color-link-hover: #59D865;
+$color-primary: #FFF;
+$color-primary-text: #191919;
+$color-block-divider: #B2B2B2;
+$color-mark: #E5E5E5;
+
+
+@mixin fontProp($fs,$lh,$c) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $c;
+}

@@ -1,0 +1,233 @@
+@import "common";
+
+.tips {
+  padding: 52px 20px 0;
+  font-family: 'Aclonica', sans-serif;
+
+  .title {
+    margin-bottom: 18px;
+    padding-top: 10px;
+    border-top: 1.5px solid $color-block-divider;
+
+    img {
+      max-width: 90px;
+    }
+  }
+
+  .accordion {
+    .accordion-panel {
+      border-top: 2px solid $color-link;
+
+      &.active-panel {
+        .accordion-header {
+          padding-top: 24px;
+
+          :first-child {
+            display: none;
+          }
+
+          :last-child {
+            &::after {
+              transform: rotate(0deg);
+            }
+          }
+        }
+
+        .accordion-body {
+          display: block;
+
+          > img {
+            display: block;
+            max-width: 117px;
+            margin: 22px auto;
+          }
+
+          .accordion-description {
+            p {
+              @include fontProp(14px, 24px, $color-primary-text);
+
+              &:first-child {
+                margin-bottom: 20px;
+              }
+            }
+
+            .accordion-mark {
+              margin: 11px 0 24px 0;
+              display: flex;
+              align-items: center;
+
+              img {
+                padding-right: 20.5px;
+              }
+
+              p {
+                @include fontProp(12px, 24px, $color-secondary-text);
+              }
+            }
+          }
+        }
+      }
+
+      .accordion-header {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px 5px 0;
+
+        .accordion-title {
+          @include fontProp(16px, 24px, $color-primary-text);
+          position: relative;
+          flex-grow: 2;
+        }
+
+        span {
+          &:first-child {
+            font-family: 'Actor', sans-serif;
+            @include fontProp(40px, 43px, $color-mark);
+            letter-spacing: 2px;
+            padding: 0 18px 0 12px;
+            text-align: center;
+            vertical-align: middle;
+          }
+
+          &.plus {
+            position: relative;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid $color-link;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(127, 127, 127, 0.3);
+
+            &::before, &::after {
+              content: "";
+              width: 7px;
+              height: 1.5px;
+              background-color: $color-link;
+              position: absolute;
+              left: 2px;
+              top: 4.75px;
+              transition: transform 0.3s ease 0s;
+            }
+
+            &::after {
+              transform: rotate(-90deg);
+            }
+          }
+        }
+      }
+
+      .accordion-body {
+        display: none;
+      }
+
+      &:last-child {
+        border-bottom: 2px solid $color-link;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .tips {
+    padding: 138px 135px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .title {
+      margin-bottom: 101px;
+      padding-top: 20px;
+
+      img {
+        max-width: 247px;
+      }
+    }
+
+    .accordion {
+      .accordion-panel {
+        &.active-panel {
+          .accordion-header {
+            padding-top: 50px;
+            align-items: flex-start;
+            flex-grow: 0;
+            justify-content: space-between;
+
+            .accordion-title {
+              @include fontProp(42px, 54px, $color-primary-text);
+              word-wrap: break-word;
+              flex-grow: 0;
+              max-width: 360px;
+            }
+          }
+
+          .accordion-body {
+            display: flex;
+            align-items: flex-start;
+
+            > img {
+              display: block;
+              max-width: 370px;
+              padding: 50px;
+              margin: 40px 0;
+            }
+
+            > .accordion-description {
+              position: relative;
+              bottom: 50px;
+              padding: 0 200px 0 136px;
+
+              p {
+                @include fontProp(16px, 24px, $color-primary-text);
+
+              }
+
+              .accordion-mark {
+                margin: 60px 0 24px;
+                display: flex;
+                align-items: center;
+
+                img {
+                  padding-right: 20px;
+                }
+
+                p {
+                  @include fontProp(13px, 24px, $color-secondary-text);
+                }
+              }
+            }
+          }
+        }
+
+        .accordion-header {
+          padding-right: 52px;
+
+          .accordion-title {
+            @include fontProp(24px, 36px, $color-primary-text);
+            align-self: center;
+          }
+
+          span {
+            &:first-child {
+              @include fontProp(110px, 130px, $color-mark);
+              padding: 0 95px 20px 50px;
+            }
+
+            &.plus {
+              align-self: center;
+              width: 36px;
+              height: 36px;
+              border: 2px solid $color-link;
+
+              &::before, &::after {
+                width: 18px;
+                height: 2px;
+                left: 7px;
+                top: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
