@@ -18,5 +18,9 @@
   "homepage": "https://github.com/BoikoMykola/AltexSoft#readme",
   "devDependencies": {
     "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0"
   }
 }

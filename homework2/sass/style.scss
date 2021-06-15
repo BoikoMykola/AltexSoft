@@ -5,13 +5,49 @@
   font-weight: 400;
 }
 
+@import "common";
+@import "variables";
+
 body {
   &.lock {
     overflow: hidden;
   }
 }
 
+.is-hidden {
+  display: none;
+}
 
+.typical-button {
+  border: 1px solid $border-color-primary;
+  border-radius: 20px;
+  text-align: center;
+  @include fontProp(12px, 24px, $color-link);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: $bg-color;
+  font-family: 'Acme', sans-serif;
+  box-shadow: 0 6px 12px rgba(127, 127, 127, 0.3);
 
+  &:hover {
+    color: $font-color-hover;
+    background-color: $bg-color-hover;
+    box-shadow: 0 0 16px rgba(127, 127, 127, 0.8);
+  }
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+}
 
 @import "header", "whatBlock", "tips", "glossary", "plans", "partners", "stillQuestion", "footer";

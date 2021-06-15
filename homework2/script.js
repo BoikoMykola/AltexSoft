@@ -1,8 +1,8 @@
 const menuIcon = document.querySelector(".menu-icon");
 menuIcon.addEventListener("click", function () {
-    const navigate = document.getElementsByTagName("nav");
+    const navigate = document.getElementById("navigate");
     document.body.classList.toggle("lock")
-    navigate[0].classList.toggle("active");
+    navigate.classList.toggle("active");
     menuIcon.classList.toggle("active")
 });
 
@@ -13,10 +13,10 @@ window.addEventListener("scroll", function () {
     const menu = document.getElementsByClassName("header-container");
     if (pageYOffset > 670 && pageYOffset < previous) {
         document.getElementById("logo").src = "image/SKOUT2.png";
-        menu[0].classList.add("header-container-fixed");
+        menu[0].id = "headerContainerFixed";
     } else {
         document.getElementById("logo").src = "image/SKOUT.png";
-        menu[0].classList.remove("header-container-fixed");
+        menu[0].removeAttribute("id");
     }
     previous = pageYOffset;
 });
@@ -43,7 +43,7 @@ $(document).ready(function () {
         autoplaySpeed: 30000,
         responsive: [
             {
-                breakpoint: 1050,
+                breakpoint: 1140,
                 settings: {
                     slidesToShow: 4,
                     autoplay: false,

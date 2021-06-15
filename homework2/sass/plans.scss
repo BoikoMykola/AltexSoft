@@ -1,4 +1,5 @@
 @import "common";
+@import "variables";
 
 .plans-block {
   position: absolute;
@@ -15,6 +16,7 @@
 
   .plans {
     padding-left: 13px;
+
     .plan-item {
       display: flex;
       flex-direction: column;
@@ -22,12 +24,16 @@
       background-color: $color-primary;
       box-shadow: 0 12px 24px $color-mark;
       border-radius: 5px;
-      margin-left: 13px;
+      margin: 15px;
       max-width: 260px;
-      border-bottom: 1px solid $color-footer-back;
+      border-bottom: 1px solid $border-color-secondary;
+
+      li {
+        list-style-type: none;
+      }
 
       .plan-title {
-        @include fontProp(12px, 24px, $color-link);
+        @include fontProp(12px, 24px, $color-plan-title);
         font-family: "Acme", sans-serif;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -39,31 +45,32 @@
       .plan-option {
         display: flex;
         align-items: center;
-        border-top: 1.5px solid $color-footer-back;
+        border-top: 1.5px solid $border-color-secondary;
         @include fontProp(13px, 24px, $color-primary-text);
         padding: 13px 0;
-        >img{
+
+        > img {
           max-width: 25px;
           margin-right: 20px;
         }
       }
+
       .plan-btn {
-        @include tpl-button;
         padding: 8px 35px;
         margin-top: 40px;
       }
-      &:hover{
+
+      &:hover {
         transform: scale(1.1);
       }
     }
   }
-
-
 }
 
 @media (min-width: 1440px) {
   .plans-block {
     top: -400px;
+
     .plans-title {
       margin-bottom: 70px;
       @include fontProp(42px, 54px, $color-primary-text);
@@ -71,10 +78,11 @@
 
     .plans {
       padding-left: 0;
+
       .plan-item {
         justify-content: space-between;
         padding: 40px 55px;
-        margin: 0 30px 0 15px;
+        margin: 25px;
         max-width: 330px;
 
         .plan-title {
@@ -86,7 +94,8 @@
         .plan-option {
           display: flex;
           align-items: center;
-          >img{
+
+          > img {
             max-width: 35px;
           }
         }
@@ -95,13 +104,14 @@
   }
 }
 
-.color-item{
+.color-item {
   background: linear-gradient(135deg, #1AB4F8, #00E89D);
-  .plan-title, .plan-option{
-    color: $color-primary!important;
+
+  .plan-title, .plan-option {
+    color: $color-primary !important;
   }
 }
 
-.non-active{
-  color: $color-footer-back!important;
+.non-active {
+  color: $color-footer-back !important;
 }

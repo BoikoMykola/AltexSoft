@@ -1,31 +1,38 @@
 @import "common";
+@import "variables";
 
-.what-is{
+.what-is {
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
   font-family: Aclonica, serif;
-  .title{
+
+  .title {
     @include fontProp(24px, 36px, $color-primary-text);
     padding: 20px 0;
   }
-  .phrase{
+
+  .phrase {
     @include fontProp(13px, 24px, $color-primary-text);
     padding-bottom: 20px;
   }
-  .what-img{
+
+  .what-img {
     align-self: center;
     margin-bottom: 20px;
     max-width: 270px;
   }
+
   .btn-block {
     display: flex;
     flex-direction: column;
+
     button {
-      @include tpl-button;
+      padding: 8px 52px;
       align-self: center;
       margin-bottom: 20px;
-      &:last-child{
+
+      &:last-child {
         padding: 8px 28px;
         background-color: $color-link;
         color: $color-primary;
@@ -34,40 +41,71 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .what-is{
-    padding: 50px 135px;
-    height: 700px;
+@media (min-width: 768px) {
+  .what-is {
+    padding: 50px 30px;
+    height: 500px;
     flex-wrap: wrap;
     justify-content: center;
-    .title{
-      @include fontProp(42px, 54px, $color-primary-text);
+
+    .title {
       padding: 40px 0;
     }
-    .phrase{
-      @include fontProp(16px, 24px, $color-primary-text);
-      padding-bottom: 100px;
-      max-width: 470px;
+
+    .phrase {
+      padding-bottom: 50px;
+      max-width: 400px;
     }
-    .what-img{
+
+    .what-img {
       align-self: center;
-      margin: 0 100px 20px 0;
-      max-width: 600px;
+      margin: 0 50px 20px 0;
       order: -1;
     }
+
     .btn-block {
       flex-direction: row;
       justify-content: space-between;
+
       button {
-        @include tpl-button;
         align-self: center;
 
 
-        &:last-child{
+        &:last-child {
           background-color: $color-link;
           color: $color-primary;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .what-is {
+    height: 700px;
+
+    .title {
+      @include fontProp(42px, 54px, $color-primary-text);
+    }
+
+    .phrase {
+      font-size: 16px;
+      padding-bottom: 100px;
+      max-width: 470px;
+    }
+
+    .what-img {
+      max-width: 600px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .what-is {
+    padding: 50px 135px;
+
+    .what-img {
+      margin-right: 100px;
     }
   }
 }

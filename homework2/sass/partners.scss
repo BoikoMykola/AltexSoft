@@ -1,23 +1,27 @@
 @import "common";
+@import "variables";
 
-.partner-block{
+.partner-block {
   margin-top: 300px;
   padding: 40px 15px;
 }
 
-.partners-big{
+.partners-big {
   text-align: center;
+
   img {
     max-width: 210px;
     margin-bottom: 60px;
   }
-  blockquote{
-    p{
+
+  blockquote {
+    p {
       @include fontProp(16px, 24px, $color-secondary-text);
       font-family: Aclonica, serif;
       padding-bottom: 20px;
     }
-    cite{
+
+    cite {
       @include fontProp(10px, 24px, $color-secondary-text);
       font-family: Acme, serif;
       letter-spacing: 2px;
@@ -27,55 +31,58 @@
   }
 }
 
-.partners{
-
+.partners {
   transform: none !important;
-  .slick-track{
+
+  .slick-track {
     align-items: baseline;
-    //width: 100%;
   }
 
-  .partner-item{
-cursor: pointer;
+  .partner-item {
+    cursor: pointer;
     text-align: center;
     border-bottom: 3px solid $color-mark;
-    img{
+
+    img {
       opacity: 0.5;
       max-width: 55px;
       padding: 5px 0;
     }
-    &:hover{
+
+    &:hover {
       border-bottom: 3px solid $color-secondary-text;
     }
-    &.slick-current{
+
+    &.slick-current {
       border-bottom: 3px solid $color-link;
     }
   }
 }
 
-@media (min-width: 1440px) {
-  .partner-block{
-    margin-top: 200px;
-    padding: 100px 135px;
+@media (min-width: 768px) {
+  .partner-block {
+    margin-top: 300px;
   }
 
-  .partners-big{
+  .partners-big {
     text-align: center;
-    padding: 100px 0;
+    padding: 0;
+
     .partner-big-item {
       display: flex;
       align-items: center;
       justify-content: center;
+
       img {
-       margin-right: 100px;
+        margin-right: 100px;
         width: 310px;
       }
 
       blockquote {
         max-width: 570px;
+
         p {
           @include fontProp(24px, 36px, $color-secondary-text);
-          text-align: left!important;
         }
 
         cite {
@@ -85,11 +92,17 @@ cursor: pointer;
     }
   }
 
-  .partners{
-    .partner-item{
-      img{
+  .partners {
+    .partner-item {
+      img {
         max-width: 130px;
       }
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .partner-block {
+    padding: 100px 135px;
   }
 }

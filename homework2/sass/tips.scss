@@ -1,4 +1,5 @@
 @import "common";
+@import "variables";
 
 
 .tips-title {
@@ -17,7 +18,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border-left: 5px solid $color-link;
+    border-left: 5px solid $border-color-primary;
     box-shadow: 0 12px 24px $color-mark;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -48,29 +49,45 @@
   }
 }
 
-.more-tips{
-  @include tpl-button($bgc: $color-link, $font-color: $color-primary);
+.more-tips {
+  padding: 8px 80px;
+  background-color: $color-link;
+  color: $color-primary;
   display: block;
   margin: 10px auto 80px;
 }
 
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .tips-title {
-    padding: 40px 135px;
-    @include fontProp(42px, 54px, $color-primary-text);
+    padding: 20px;
   }
 
   .tips {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 40px;
 
     .tip-block {
-      max-width: 500px;
-      padding: 15px;
-      margin: 15px;
+      max-width: 350px;
+      margin: 5px;
+    }
+  }
+
+  .more-tips {
+    margin: 20px auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .tips-title {
+    padding: 40px 135px;
+    @include fontProp(42px, 54px, $color-primary-text);
+  }
+
+  .tips {
+    .tip-block {
+      max-width: 450px;
 
       .tip-block-text {
         padding: 15px 25px 0 45px;
@@ -94,8 +111,19 @@
     }
   }
 
-  .more-tips{
-    width: 230px;
+  .more-tips {
     margin: 40px auto 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tips {
+    padding: 40px;
+
+    .tip-block {
+      max-width: 500px;
+      padding: 15px;
+      margin: 15px;
+    }
   }
 }

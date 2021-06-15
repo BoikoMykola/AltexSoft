@@ -12,17 +12,17 @@
 </head>
 <body>
 <!-- HEADER -->
-<header>
+<header class="header-block">
     <div class="header-container">
-        <div class="wrapper">
+        <div class="wrapper container">
             <div class="logo">
                 <a href="#"><img id="logo" src="image/SKOUT.png" alt="SKOUT"></a>
             </div>
             <div class="header-menu">
-                <div class="menu-icon">
+                <button class="menu-icon">
                     <span></span>
-                </div>
-                <nav>
+                </button>
+                <nav class="header-nav" id="navigate">
                     <ul>
                         <li>
                             <a href="#">Why Skout</a>
@@ -43,10 +43,10 @@
                             <a href="#">Blog</a>
                         </li>
                         <li class="get-skout-btn">
-                            <button>Get Skout</button>
+                            <button class="typical-button">Get Skout</button>
                         </li>
                         <li class="login-btn">
-                            <button>Log In</button>
+                            <button class="typical-button">Log In</button>
                         </li>
                     </ul>
                 </nav>
@@ -61,7 +61,7 @@
                 conglomerate or a mom-and-pop shop we make cybersecurity easy and
                 accessible because we believe security is universal and peace of mind is
                 worth protecting.</p>
-            <button>Why SKOUT</button>
+            <button class="typical-button">Why SKOUT</button>
         </div>
     </div>
 </header>
@@ -78,8 +78,8 @@
         </div>
         <img class="what-img" src="image/SKOUT_SA_Mockup.png" alt="SKOUT_SA_Mockup">
         <div class="btn-block">
-            <button>Learn more</button>
-            <button>Explore Products</button>
+            <button class="typical-button">Learn more</button>
+            <button class="typical-button">Explore Products</button>
         </div>
     </div>
 </div>
@@ -125,7 +125,7 @@
             <img class="notes" src="image/i.png" alt="media" title="Based on the 2018 Verizon Data Breach Report">
         </div>
     </div>
-    <button class="more-tips">More Tips</button>
+    <button class="more-tips typical-button">More Tips</button>
 </div>
 
 <!-- GLOSSARY -->
@@ -241,7 +241,7 @@
                 </div>
             </div>
         </div>
-        <button class="slider-btn">Get SKOUT</button>
+        <button class="typical-button slider-btn">Get SKOUT</button>
     </div>
 </div>
 
@@ -250,42 +250,50 @@
     <div class="plans-block">
         <h2 class="plans-title">SKOUT Plans</h2>
         <div class="plans">
-            <div class="plan-item">
-                <h3 class="plan-title">Bronze</h3>
-                <p class="plan-option"><img src="image/CheckMark-Line-T.svg" alt="Path">Security Training</p>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Path">Email</p>
-                <p class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Endpoint</p>
-                <p class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Monitoring</p>
-                <p class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Annual Pro Services</p>
-                <button class="plan-btn">Request a Quote</button>
-            </div>
-            <div class="plan-item">
-                <h3 class="plan-title">Silver</h3>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Path">Security Training</p>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Path">Email</p>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Minus">Endpoint</p>
-                <p class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Monitoring</p>
-                <p class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Annual Pro Services</p>
-                <button class="plan-btn">Request a Quote</button>
-            </div>
-            <div class="plan-item">
-                <h3 class="plan-title">Gold</h3>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Path">Security Training</p>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Path">Email</p>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Minus">Endpoint</p>
-                <p class="plan-option"><img src="image/CheckMark.png" alt="Minus">Monitoring</p>
-                <p class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Annual Pro Services</p>
-                <button class="plan-btn">Request a Quote</button>
-            </div>
-            <div class="plan-item color-item">
-                <h3 class="plan-title">Plus</h3>
-                <p class="plan-option"><img src="image/CheckMarkWhite.png" alt="Path">Security Training</p>
-                <p class="plan-option"><img src="image/CheckMarkWhite.png" alt="Path">Email</p>
-                <p class="plan-option"><img src="image/CheckMarkWhite.png" alt="Minus">Endpoint</p>
-                <p class="plan-option"><img src="image/CheckMarkWhite.png" alt="Minus">Monitoring</p>
-                <p class="plan-option"><img src="image/CheckMarkWhite.png" alt="Minus">Annual Pro Services</p>
-                <button class="plan-btn">Request a Quote</button>
-            </div>
+            <ul class="plan-item">
+                <li class="plan-title">Bronze</li>
+                <li class="plan-option"><img src="image/CheckMark-Line-T.svg" alt="Path">Security Training</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Path">Email</li>
+                <li class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Endpoint</li>
+                <li class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Monitoring</li>
+                <li class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Annual Pro Services</li>
+                <li>
+                    <button class="plan-btn typical-button">Request a Quote</button>
+                </li>
+            </ul>
+            <ul class="plan-item">
+                <li class="plan-title">Silver</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Path">Security Training</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Path">Email</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Minus">Endpoint</li>
+                <li class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Monitoring</li>
+                <li class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Annual Pro Services</li>
+                <li>
+                    <button class="plan-btn typical-button">Request a Quote</button>
+                </li>
+            </ul>
+            <ul class="plan-item">
+                <li class="plan-title">Gold</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Path">Security Training</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Path">Email</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Minus">Endpoint</li>
+                <li class="plan-option"><img src="image/CheckMark.png" alt="Minus">Monitoring</li>
+                <li class="plan-option non-active"><img src="image/UnCheckMark.png" alt="Minus">Annual Pro Services</li>
+                <li>
+                    <button class="plan-btn typical-button">Request a Quote</button>
+                </li>
+            </ul>
+            <ul class="plan-item color-item">
+                <li class="plan-title">Plus</li>
+                <li class="plan-option"><img src="image/CheckMarkWhite.png" alt="Path">Security Training</li>
+                <li class="plan-option"><img src="image/CheckMarkWhite.png" alt="Path">Email</li>
+                <li class="plan-option"><img src="image/CheckMarkWhite.png" alt="Minus">Endpoint</li>
+                <li class="plan-option"><img src="image/CheckMarkWhite.png" alt="Minus">Monitoring</li>
+                <li class="plan-option"><img src="image/CheckMarkWhite.png" alt="Minus">Annual Pro Services</li>
+                <li>
+                    <button class="plan-btn typical-button">Request a Quote</button>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -355,9 +363,7 @@
             <div class="partner-item">
                 <img src="image/Bsron.png" alt="Bsron">
             </div>
-
         </div>
-<!--        <div class="partner-list"></div>-->
     </div>
 </div>
 
@@ -388,10 +394,10 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-    <div class="wrapper">
-        <div class="container">
-            <nav>
+<footer class="footer-block">
+    <div class="container">
+        <div class="wrapper">
+            <nav class="footer-nav-block">
                 <ul class="footer-nav">
                     <li>
                         <a href="#">Blog</a>
@@ -414,44 +420,39 @@
                     </li>
                 </ul>
             </nav>
-            <div class="contact-container">
-                <div class="contact">
-                    <p>New York</p>
-                    <a href="tel:+18558384500">1-855-838-4500</a>
-                    <div>
-                        <p>423 W 55th St. 7th Floor
-                            New York, NY, 10019</p>
-                    </div>
-                    <a href="#">View Map</a>
-                </div>
-                <div class="contact">
-                    <p>Corporate Headquarters</p>
-                    <a href="tel:+18558384500">1-855-838-4500</a>
-                    <div>
-                        <p>270 S. Service Road, Suite 55
-                            Melville, NY, 11747</p>
-                    </div>
-                    <a href="#">View Map</a>
-                </div>
-                <div class="contact">
-                    <p>EMEA </p>
-                    <a href="tel:+18558384500">1-855-838-4500</a>
-                    <div>
-                        <p>IDA Business and Technology
-                            Park, Mountrath Road, Unit 2 Portlaoise, Ireland</p>
-                    </div>
-                    <a href="#">View Map</a>
-                </div>
-            </div>
+            <ul class="contact-container">
+                <li class="contact">
+                    <p class="city">New York</p>
+                    <a class="phone" href="tel:+18558384500">1-855-838-4500</a>
+
+                    <p class="address">423 W 55th St. 7th Floor
+                        New York, NY, 10019</p>
+                    <a class="map-link" href="#">View Map</a>
+                </li>
+                <li class="contact">
+                    <p class="city">Corporate Headquarters</p>
+                    <a class="phone" href="tel:+18558384500">1-855-838-4500</a>
+                    <p class="address">270 S. Service Road, Suite 55
+                        Melville, NY, 11747</p>
+                    <a class="map-link" href="#">View Map</a>
+                </li>
+                <li class="contact">
+                    <p class="city">EMEA </p>
+                    <a class="phone" href="tel:+18558384500">1-855-838-4500</a>
+                    <p class="address">IDA Business and Technology
+                        Park, Mountrath Road, Unit 2 Portlaoise, Ireland</p>
+                    <a class="map-link" href="#">View Map</a>
+                </li>
+            </ul>
         </div>
         <div class="social">
-            <div>
-                <a href="#"><img src="image/twitter.png" alt="twitter"></a>
-                <a href="#"><img src="image/facebook.png" alt="facebook"></a>
-                <a href="#"><img src="image/youTube.png" alt="youTube"></a>
-                <a href="#"><img src="image/inst.png" alt="instagram"></a>
-            </div>
-            <img src="image/cyber.png" alt="skout">
+            <ul class="social-block">
+                <li><a href="#"><img src="image/twitter.png" alt="twitter"></a></li>
+                <li><a href="#"><img src="image/facebook.png" alt="facebook"></a></li>
+                <li><a href="#"><img src="image/youTube.png" alt="youTube"></a></li>
+                <li><a href="#"><img src="image/inst.png" alt="instagram"></a></li>
+            </ul>
+            <a class="footer-logo" href="#"><img src="image/Lockup-White.png" alt="skout"></a>
         </div>
     </div>
 </footer>
